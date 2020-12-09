@@ -1,4 +1,4 @@
-let requestURL = "data/membership.json";
+let requestURL = "data/membership.json"; 
 let request = new XMLHttpRequest();
 //getting content Element to append grants information
 let maincontentContainer = document.getElementsByClassName('main-content')[0];
@@ -7,9 +7,11 @@ request.responseType = 'json';
 request.send();
 request.onload = function(){
     let content = '';
-    const webelementsjson = request.response;
+    const committeepagejson = request.response;
     //condition for checking if browser is Internet Explorer
-    let webelements =  ((false || !!document.documentMode))? JSON.parse(webelementsjson): webelementsjson;
+    let committee =  ((false || !!document.documentMode))? JSON.parse(committeepagejson): committeepagejson;
+    let webelements = committee.content;
+    let members = committee.members;
     let logostart = true;
     let pageheaders = [];
     for(let i = 0; i < webelements.length; i++)
@@ -24,22 +26,14 @@ request.onload = function(){
         {
             let header = document.getElementsByClassName("content-header")[0];
             header.innerHTML = element.content.toUpperCase();
-            if(element.hasOwnProperty('style'))
-                header.setAttribute('style', element.style);
         }
         else if(type == 'p')
         {
-            if(element.hasOwnProperty('style'))
-                content += '<p style ="'+element.style+'">' + element.content + '</p>';
-            else
-                content += '<p>' + element.content + '</p>';
+            content += '<p>' + element.content + '</p>';
         }
         else if(type == 'img')
         {
-            if(element.hasOwnProperty('style'))
-                content += '<img src="assets/images/'+ element.content + '" alt="" style="'+ element.style +'">';
-            else
-                content += '<img src="assets/images/'+ element.content + '" alt="" style="width: 100%;">';
+            content += '<img src="assets/images/'+ element.content + '" alt="" style="width: 100%;">';
         }
         else if(type == 'iframe')
         {
@@ -47,10 +41,7 @@ request.onload = function(){
         }
         else if(type == 'ul')
         { 
-            if(element.hasOwnProperty('style'))
-                content += '<ul class="sub-list ' + element.content +'" style ="'+element.style+'">';
-            else
-                content += '<ul class="sub-list ' + element.content +'">';
+            content += '<ul class="sub-list ' + element.content +'">';
         }
         else if(type == 'li')
         {
@@ -84,12 +75,18 @@ request.onload = function(){
             }
         }
     }
+  
+    content +=buildMembersContent(members);
     addheader(pageheaders);
     let contentElement = document.createElement('div');
     contentElement.classList.add('content');
     contentElement.innerHTML = content.trim();
     maincontentContainer.appendChild(contentElement);
     addfooter();
+    let searchbox = document.getElementById('search-box');
+    let searchbutton = document.getElementById('search-button');
+    searchbox.onkeyup = searchfunction;
+    searchbutton.onclick = searchfunction;
 }
 
 let addheader =  function (headers){
@@ -115,24 +112,52 @@ let addheader =  function (headers){
         {
             content += '<div class="carousel-item">';
         }
-        if(header1==''){
-            content +=  '<img src="'+ source + image +'" class="d-block w-100" alt="...">'+
-        '</div>';
-        }
-        else{
-            content +=  '<img src="'+ source + image +'" class="d-block w-100" alt="...">'+
-            '<div id = "landing-page-text-wrapper">'+
-                '<h1>'+ header1 +'</h1>' + 
-                '<p>' + header2 + '</p>' +      
-            '</div>'+
-        '</div>';
-        }
+        content +=  '<img src="'+ source + image +'" class="d-block w-100" alt="...">'+
+                    '<div id = "landing-page-text-wrapper">'+
+                        '<h1>'+ header1 +'</h1>' + 
+                        '<p>' + header2 + '</p>' +      
+                    '</div>'+
+                '</div>';
     }
     content +=  '</div></div>';
     header.innerHTML = content;
 }
 
-$('.carousel').carousel({pause: "false",
- interval: 2000
+let buildMembersContent = function(members){
+    let content = '<div class="display-flex">';
+    for(var i=0; i< members.length; i++){
+        let member = members[i];
+        content +=  buildMemberElement(member);
+    }
+    content += '</div>'
+    return content;
+}
 
-});
+let buildMemberElement = function(member){
+    let content = '';
+    content +=  '<div class= "col-lg-4 col-md-4 col-sm-6 search-container" id="'+ (member.firstName.replace(/ /g, '')) +'">'+
+    '   <img class="img-fluid mx-auto d-block member-img img-thumbnail" src="assets/images/Membership/' + member.photo + '" alt="member photo">'  +
+    '   <p class="member-info">' + buildNameElement(member) +
+    '   <br><span class="jobtitle">' + member.title +
+    '   <br><span class="organization">' + member.organization +
+    '   <br><a href = mailto:' + member.email + ' class ="dont-break-out email">'+ member.email+ '</a>'+
+    '   <br>'+ (member.phone != ""? member.phone : "" )+ 
+    '   </p>' + 
+    '</div>';   
+    return content;
+}
+
+let buildNameElement = function(member){
+  let content = '';
+  if(member.profilepage != '')
+  {
+      content += '<a href = "'+ member.profilepage +'"><span class="name"><strong>' + member.lastName + ' ' + member.firstName + '</strong></a>';
+  }
+  else
+  {
+    content += '<span class="name"><strong>' + member.lastName + ' ' + member.firstName + '</strong>';
+  }
+  return content
+}
+
+$('.carousel').carousel({pause: false});
