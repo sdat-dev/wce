@@ -139,7 +139,7 @@ Primary use:    Common.css file used for styling header and
 }
 
 #navbar-header {
-    background-color:#004C93;
+    background-color:#46166b;
     height: 100px;
     position: sticky;
     top: 0;
@@ -275,7 +275,7 @@ Primary use:    Common.css file used for styling header and
 
 #button-properties{
     color: white;
-    background-color: #004C93;
+    background-color: #46166b;
     padding: 9px;
     font-size: 22px;
     font-weight: bold;
