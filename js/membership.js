@@ -83,10 +83,10 @@ request.onload = function(){
     contentElement.innerHTML = content.trim();
     maincontentContainer.appendChild(contentElement);
     addfooter();
-    let searchbox = document.getElementById('search-box');
-    let searchbutton = document.getElementById('search-button');
-    searchbox.onkeyup = searchfunction;
-    searchbutton.onclick = searchfunction;
+    // let searchbox = document.getElementById('search-box');
+    // let searchbutton = document.getElementById('search-button');
+    // searchbox.onkeyup = searchfunction;
+    // searchbutton.onclick = searchfunction;
 }
 
 let addheader =  function (headers){
