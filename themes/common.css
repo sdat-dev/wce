@@ -33,7 +33,7 @@ Primary use:    Common.css file used for styling header and
 }
 
 .buffer {
-    height: 75px;
+    height: 100px;
     width: 100%;
 }
 
@@ -69,6 +69,10 @@ Primary use:    Common.css file used for styling header and
     text-transform: uppercase;
 }
 
+.content a{
+    color:#46166C;
+}
+
 .content-header-top-bottom-margin{
     color: #46166C;
     font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
@@ -98,6 +102,11 @@ Primary use:    Common.css file used for styling header and
 }
 
 .landing-page-image-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+#page-header{
     width: 100%;
     position: relative;
 }
@@ -144,7 +153,6 @@ Primary use:    Common.css file used for styling header and
 
 .num-list{
     list-style:decimal;
-    list-style-position: inside;
 }
 
 .underline{
@@ -201,6 +209,79 @@ Primary use:    Common.css file used for styling header and
     color: #46166C;
 }
 
+.PURPLE-FONT{
+    color: #46166C;
+}
+
+.yellow-font{
+    color: #eeb211;
+}
+
+.YELLOW-FONT{
+    color: #eeb211;
+}
+
+.black-font{
+    color: black;
+}
+
+.BLACK-FONT{
+    color: black;
+}
+
+.blue-font{
+    color: #004C93;
+}
+
+.BLUE-FONT{
+    color: #004C93;
+}
+
+.grey-font{
+    color: #838687;
+}
+
+.GREY-FONT{
+    color: #838687;
+}
+
+.cyan-font{
+    color: #009EE0;
+}
+
+.CYAN-FONT{
+    color: #009EE0;
+}
+
+.content-tool-bar{
+    position: relative;
+}
+
+.italic{
+    font-style: italic;
+}
+
+#social-media-button{
+    color: white;
+    background-color: #46166C;
+    padding: 9px;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'News Cycle', Helvetica, Arial, sans-serif;
+    margin-top: 20px;
+    margin-left: 32px;
+    border-radius: 1%;
+}
+
+#social-media-button > a{
+    color: inherit;
+    text-decoration: none;
+}
+
+#social-media-button > a img{
+    height: 30px;
+}
+
 .list-preceding-paragraph, 
 .zero-bottom-margin-paragraph{
     margin-bottom: 0px;
@@ -237,71 +318,6 @@ Primary use:    Common.css file used for styling header and
 .ualbany-logo {
     margin-left: 20px;
     vertical-align: middle;
-}
-
-.nav-pills .nav-link.active{
-    background-color: #edba32;
-    color: #46166C;
-}
-
-.nav-pills .nav-link:hover{
-    background-color:#edba32;
-    color: #46166C;
-}
-
-.nav-link{
-    background-color: #46166C;
-    color: white;
-    border: 1px solid #46166C;
-}
-
-.nav-item{
-    margin-right: 10px;
-    text-align: center;
-}
-
-.italic-underline{
-    font-style: italic;
-    text-decoration: underline;
-}
-
-.check-list{
-    list-style:none;
-    list-style-position: inside;
-}
-
-.check-list>li:before {
-    content: "✓  ";
-    font-weight: bold;
-}
-
-.greenHighlight{
-    background-color: green;
-    color: white;
-}
-
-.redHighlight{
-    background-color: red;
-    color: white;
-}
-
-.highlight{
-    color:  #46166C;
-    font-weight: bold;
-}
-
-.italic{
-    font-style: italic;
-}
-
-.square-list{
-    list-style: square;
-    list-style-position: inside;
-}
-
-li{
-    margin-bottom: 5px;
-    margin-top: 5px;
 }
 
 @media only screen and (max-width: 340px)
@@ -394,7 +410,7 @@ li{
     }
     #landing-logo-wrapper{
         bottom: 10%;
-        width: 173px;
+        width: 20%;
     }
     .main-content>h1, .main-content>h2, .main-content>h3, .main-content>h4, .main-content>h5, .main-content>h6, .main-content>p, .main-content>div {
         margin-left: 50px;
@@ -436,7 +452,7 @@ li{
     }
     #landing-logo-wrapper{
         bottom: 10%;
-        width: 173px;
+        width: 20%;
     }
 }
 
@@ -457,12 +473,6 @@ li{
     }
     #landing-logo-wrapper{
         bottom: 10%;
-        width: 173px;
+        width: 20%;
     }
-}
-
-@media print
-{
-.no-print {display:none;}
-.collapse {display: block;}
 }

@@ -1,32 +1,41 @@
 let addTopMenu = function(){
     let navheader = document.getElementById('navbar-header');
     let headerContent = '<div class="ualbany-logo-wrapper">'+
-    '<span class="helper">'+
-    '</span>'+
-    '<a href="https://www.albany.edu/">'+
-        '<img class="ualbany-logo" src="assets/images/logo.png" />'+
-    '</a>'+
-    '<div class="topnav-right">' +
-        '<a href="https://www.albany.edu/myualbany">MYUALBANY</a>'+
-        '<a href="https://www.albany.edu/apply-now">APPLY</a>'+
-        '<a href="https://www.alumni.albany.edu/s/1642/18-giving/landing.aspx?sid=1642&gid=2&pgid=2040&appealcode=uahome">'+
-        '   GIVE</a>'+ 
-        '<div class="searchTop"  style="display:inline">' +
-       ' <form class="searchbox"  > '+
-            '<button type="button" style="padding-left:25px;padding-right:15px;" class="btn1" id="search-toggle">'+
-                '<span class="fa fa-search" style="line-height: 50px; font-size: 20px;"></i>'+
-            '</button>'+
+                            '<span class="helper">'+
+                            '</span>'+
+                            '<a href="https://www.albany.edu/">'+
+                                '<img class="ualbany-logo" src="assets/images/logo.png" />'+
+                            '</a>'+
+                            '<div class="topnav-right">' +
+                                '<a href="https://www.albany.edu/myualbany">MYUALBANY</a>'+
+                                '<a href="https://www.albany.edu/apply-now">APPLY</a>'+
+                                '<a href="https://www.alumni.albany.edu/s/1642/18-giving/landing.aspx?sid=1642&gid=2&pgid=2040&appealcode=uahome">'+
+                                '   GIVE</a>'+ 
+                                /* '<button type="button" style="padding-left:25px;padding-right:15px;" class="btn1" id="search-toggle">'+
+                                '<span class="fa fa-search"></i>'+
+                                '</button>'+
+    
+                       
+                                '<span class="mainSearch" style="margin-right:-307px; display:inline-block;">'+
+                                '<button type="button" style="padding-left:25px;padding-right:15px;" class="btn1" id="times-button">'+
+                                '<span class="fa fa-times"></i>'+
+                                '</button>'+ */
+                            '</div>'+
+                            '<div class="searchTop"  style="display:inline">' +
+                               ' <form class="searchbox"  > '+
+                                    '<button type="button" style="padding-left:25px;padding-right:15px;" class="btn1" id="search-toggle">'+
+                                        '<span class="fa fa-search" style="line-height: 50px; font-size: 20px;"></i>'+
+                                    '</button>'+
 
-            '<button type="button" style="padding-left:25px;padding-right:15px;" class="btn1 hidden11 " id="times-button">'+
-                '<span class="fa fa-times" style="line-height: 50px; font-size: 20px;"></i>'+
-            '</button>'+
-            '<input type="search" style=" width:0px; height:0px; margin-left:20px;" class="searchbox-input" id="textInput" >'+
-            '<input class="submitButton"  style=" width:0px; height:0px; margin-bottom:5px;" value="Search" type="submit" onclick="getValue()">'+
-         '</form>' +
-    '</div>'+
-    '</div>'+
- 
-   '</div>';
+                                    '<button type="button" style="padding-left:25px;padding-right:15px;" class="btn1 hidden11 " id="times-button">'+
+                                        '<span class="fa fa-times" style="line-height: 50px; font-size: 20px;"></i>'+
+                                    '</button>'+
+                                    '<input type="search" style=" width:0px; height:0px; margin-left:20px;" class="searchbox-input" id="textInput" >'+
+                                    '<input class="submitButton"  style=" width:0px; height:0px; margin-bottom:5px;" value="Search" type="submit" onclick="getValue()">'+
+                                 '</form>' +
+                            '</div>'+
+                         
+                           '</div>';
     navheader.innerHTML = headerContent;
 
     let megamenu = document.getElementById('mega-menu');
@@ -93,35 +102,35 @@ let addTopMenu = function(){
                                         '</ul>'+
                                     '</div>'+
                                 '</div>'+
-                                '<div class="d-flex justify-content-center">'+
+                                '<div class="d-flex justify-content-center" style="height:55px">'+
                                     '<div class=" p-2">'+ 
                                         '<a  href="https://www.albany.edu/main/facebook.shtml">'+
-                                            '<span class="fab fa-facebook-f" style="font-size:24px; color:white"></span>'+
+                                            '<span class="fab fa-facebook-f" style="font-size:22px; color:white"></span>'+
                                         '</a>'+
                                     '</div>'+
                                     '<div class="p-2">'+ 
                                         '<a href="https://www.albany.edu/main/twitter.shtml">'+
-                                            '<i class="fab fa-twitter" style="font-size:24px;color:white"></i>'+
+                                            '<i class="fab fa-twitter" style="font-size:22px;color:white"></i>'+
                                         '</a>'+
                                     '</div>'+
                                     '<div class="p-2">'+ 
                                         '<a href="https://www.instagram.com/ualbany/">'+
-                                            '<i class="fab fa-instagram" style="font-size:24px; color:white"></i>'+
+                                            '<i class="fab fa-instagram" style="font-size:22px; color:white"></i>'+
                                         '</a>'+
                                     '</div>'+
                                     '<div class="p-2">'+ 
                                         '<a href="https://www.snapchat.com/add/ualbany">'+
-                                            '<i class=" fab fa-snapchat" style="font-size:24px; color:white"></i>'+
+                                            '<i class=" fab fa-snapchat" style="font-size:22px; color:white"></i>'+
                                         '</a>'+
                                     '</div>'+
                                     '<div class="p-2">'+ 
                                         '<a href="https://www.albany.edu/main/youtube.shtml">'+
-                                            '<i class=" fab fa-youtube"  style="font-size:24px; color:white"></i>'+
+                                            '<i class=" fab fa-youtube"  style="font-size:22px; color:white"></i>'+
                                         '</a>'+
                                     '</div>'+
                                     '<div class="p-2">'+ 
                                         '<a href="https://www.albany.edu/main/linkedin.shtml">'+
-                                            '<i class="  fab fa-linkedin" style="font-size:24px; color:white"></i>'+
+                                            '<i class="  fab fa-linkedin" style="font-size:22px; color:white"></i>'+
                                         '</a>'+
                                     '</div>'+
                                 '</div>'+
@@ -197,9 +206,12 @@ $(document).ready(function () {
     function showpanel(){
         $('.searchbox-input').css("width","200px");  
         $('.searchbox-input').css("height","25px");
+
+
         $('.submitButton').css("width","90px");  
         $('.submitButton').css("height","25px");
     }
+
 
     $('#times-button').click(function() {
        
@@ -213,7 +225,10 @@ $(document).ready(function () {
 
           searchBox.removeClass('searchbox-open');
 
-          $(".topnav-right").animate({ "margin-left":  "730px" },"fast");              
+          $(".topnav-right").animate({ "margin-left":  "730px" },"fast");    
+
+  
+          
   
         });
 
